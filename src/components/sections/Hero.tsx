@@ -184,7 +184,7 @@ export default function Hero({ started }: { started: boolean }) {
               initial={{ opacity: 0, y: 14 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.3, duration: 0.7 }}
-              className="mx-auto mt-4 max-w-xl text-pretty text-sm leading-relaxed text-ink/80 sm:text-base lg:mx-0"
+              className="mx-auto mt-4 max-w-xl text-pretty text-sm leading-relaxed text-ink opacity-90 sm:text-base lg:mx-0"
             >
               <span className="font-semibold text-ink">{profile.subHeadline}</span>{" "}
               — building end-to-end ML pipelines, IoT-based real-time analytics, and
