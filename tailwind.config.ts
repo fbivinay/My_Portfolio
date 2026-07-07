@@ -1,40 +1,24 @@
 import type { Config } from "tailwindcss";
 
-/** Netflix-derived token system — every color decision flows from here. */
-const config: Config = {
+export default {
   content: ["./src/**/*.{ts,tsx}"],
-  darkMode: ["selector", '[data-theme="light"] &:not(*)'],
   theme: {
     extend: {
       colors: {
-        base: "var(--bg)",
-        surface: "var(--surface)",
-        raised: "var(--raised)",
-        accent: "#E50914",
-        ink: "var(--ink)",
-        mute: "var(--mute)",
-        line: "var(--line)",
+        base: "rgb(var(--bg) / <alpha-value>)",
+        ink: "rgb(var(--ink) / <alpha-value>)",
+        gray: "rgb(var(--gray) / <alpha-value>)",
+        faint: "rgb(var(--faint) / <alpha-value>)",
+        line: "rgb(var(--line) / <alpha-value>)",
+        accent: "rgb(var(--accent) / <alpha-value>)",
+        wash: "rgb(var(--wash) / <alpha-value>)",
       },
       fontFamily: {
-        sans: [
-          "SF Pro Display",
-          "SF Pro Text",
-          "-apple-system",
-          "var(--font-inter)",
-          "Inter",
-          "system-ui",
-          "sans-serif",
-        ],
+        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
+        serif: ["var(--font-newsreader)", "Georgia", "serif"],
       },
-      boxShadow: {
-        glow: "0 0 40px -8px rgba(229,9,20,0.45)",
-        card: "0 24px 60px -24px rgba(0,0,0,0.9)",
-      },
-      transitionTimingFunction: {
-        netflix: "cubic-bezier(0.22, 1, 0.36, 1)",
-      },
+      maxWidth: { column: "44rem" },
     },
   },
   plugins: [],
-};
-export default config;
+} satisfies Config;
